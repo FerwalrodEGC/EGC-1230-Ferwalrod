@@ -1,7 +1,7 @@
 from django.test import TestCase
 from rest_framework.test import APIClient
 from rest_framework.test import APITestCase
-
+from base.tests import BaseTestCase
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 
