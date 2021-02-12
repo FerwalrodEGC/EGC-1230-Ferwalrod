@@ -16,6 +16,15 @@ install:
   - pip install codacy-coverage
 script:
   - cd decide
-  - coverage run --branch --source=. ./manage.py test census --keepdb --with-xunit
-  - coverage xml
-  - python-codacy-coverage -r coverage.xml
+  - ./manage.py test census --keepdb --with-xunit
+notifications:
+  email:
+    - ferwalrod@alum.us.es
+  on_success: always
+  on_failure: always
+deploy:
+  provider: heroku
+  app: examenegc-1230-ferwalrod
+  strategy: git
+  apikey: f2ae22ae-4df4-4464-8842-395aa782b699
+
